@@ -1,0 +1,51 @@
+<!-- cart.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- ... (head content) ... -->
+</head>
+<body>
+    <!-- Start of Checkout Form -->
+    <form id="checkout-form" action="process_order.php" method="post">
+        <div>
+            <h2>Delivery Address</h2>
+            <div>
+                <label for="address">Address:</label>
+                <input type="text" id="address" name="address" required>
+            </div>
+            <!-- Add more address fields as needed -->
+        </div>
+
+        <div>
+            <h2>Payment Option</h2>
+            <div>
+                <label for="credit-card">Credit Card</label>
+                <input type="radio" id="credit-card" name="payment_option" value="credit-card" required>
+                <label for="UPI">UPI</label>
+                <input type="radio" id="UPI" name="payment_option" value="UPI" required>
+                <label for="cash-on-delivery">Cash On Delivery</label>
+                <input type="radio" id="cash-on-delivery" name="payment_option" value="cash-on-delivery" required>
+                <!-- Add more payment options as needed -->
+            </div>
+        </div>
+
+        <!-- Hidden input field to store cart data -->
+        <input type="hidden" name="cart_data" value="<?php echo htmlentities(json_encode($cart)); ?>">
+
+        <button type="submit" id="place-order-button">Place Order</button>
+    </form>
+
+    <!-- ... (modal and script content) ... -->
+    <script>
+        // Retrieve the cart data from the hidden input field
+        var cartDataInput = document.getElementById('cart-data');
+        var cartData = JSON.parse(cartDataInput.value);
+    
+        // Use the cart data as needed
+        console.log('Cart Data:', cartData);
+        // You can process and display the cart data as per your requirements here
+    </script>
+    
+
+</body>
+</html>

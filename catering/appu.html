@@ -1,0 +1,82 @@
+<!-- ... Previous HTML code ... -->
+<!DOCTYPE html>
+<lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wedding Catering Services</title>
+    <link rel="stylesheet" href="../catering/style.css">
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Wedding Catering Services</h1>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="#vegetarian">Vegetarian</a></li>
+            <li><a href="#non-vegetarian">Non-Vegetarian</a></li>
+        </ul>
+    </nav>
+    <section id="vegetarian">
+        <h2>Vegetarian Menu</h2>
+        <ul>
+            <li>Vegetarian Dish 1</li>
+            <li>Vegetarian Dish 2</li>
+            <li>Vegetarian Dish 3</li>
+            <!-- Add more vegetarian dishes here -->
+        </ul>
+    </section>
+    <section id="non-vegetarian">
+        <h2>Non-Vegetarian Menu</h2>
+        <ul>
+            <li>Non-Vegetarian Dish 1</li>
+            <li>Non-Vegetarian Dish 2</li>
+            <li>Non-Vegetarian Dish 3</li>
+            <!-- Add more non-vegetarian dishes here -->
+        </ul>
+    </section>
+    <footer>
+        <p>&copy; 2023 Wedding Catering Services</p>
+    </footer>
+</body>
+<section id="vegetarian">
+    <h2>Vegetarian Menu</h2>
+    <ul>
+        <li>
+            <h3>Vegetarian Dish 1</h3>
+            <p>Description of Vegetarian Dish 1.</p>
+            <label for="veg-dish1-customization">Customization:</label>
+            <select id="veg-dish1-customization">
+                <option value="none">None</option>
+                <option value="spicy">Spicy</option>
+                <option value="extra-cheese">Extra Cheese</option>
+                <!-- Add more customization options here -->
+            </select>
+            <button onclick="addToCart('Vegetarian Dish 1', 'veg-dish1-customization')">Add to Cart</button>
+        </li>
+        <!-- Add more vegetarian dishes here -->
+    </ul>
+</section>
+
+<section id="non-vegetarian">
+    <h2>Non-Vegetarian Menu</h2>
+    <ul>
+        <li>
+            <h3>Non-Vegetarian Dish 1</h3>
+            <p>Description of Non-Vegetarian Dish 1.</p>
+            <label for="non-veg-dish1-customization">Customization:</label>
+            <select id="non-veg-dish1-customization">
+                <option value="none">None</option>
+                <option value="spicy">Spicy</option>
+                <option value="extra-sauce">Extra Sauce</option>
+                <!-- Add more customization options here -->
+            </select>
+            <button onclick="addToCart('Non-Vegetarian Dish 1', 'non-veg-dish1-customization')">Add to Cart</button>
+        </li>
+        <!-- Add more non-vegetarian dishes here -->
+    </ul>
+</section>
+
+<script src="script.js"></script>
+</body>
+</html>

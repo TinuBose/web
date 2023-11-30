@@ -1,0 +1,164 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #232426;
+    margin: 30px;
+    padding: 0;
+}
+
+h1 {
+    background-color: #fff;
+}
+
+#cart {
+    display: inline-block;
+    flex-direction: column; /* Stack items vertically */
+            align-items: flex-start;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    background-color: rgb(188, 167, 107);
+}
+
+/* Individual item container */
+.cart-item {
+    flex: 0 0 calc(33.33% - 20px); /* Adjust as needed for the number of items per row */
+    max-width: 300px; /* Adjust as needed */
+    border: 1px solid #ccc;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.total-price-paragraph {
+    text-align: right;
+    position: relative;
+    
+    /* Add any other styles you want for the total price paragraph */
+}
+
+
+/* Styling for the quantity input field */
+.cart-quantity-input {
+    width: 40px;
+}
+
+/* Move the total price to the right side */
+p {
+    margin-right: 20px;
+}
+
+#total-price {
+    font-weight: bold;
+    font-size: 18px;
+    
+}
+
+#address-section {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+textarea {
+    width: 100%;
+    height: 100px;
+    resize: none;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+button {
+    background-color: #c18732;
+    color: #fff;
+    border: none;
+    padding: 10px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+
+
+button:hover {
+    background-color: #0056b3;
+}
+
+
+#quantity-th {
+    width: 30px;
+    background-color: rgb(231, 234, 234);
+    
+}
+
+#placeorder {
+    position: relative;
+    left: 20px;
+
+}
+
+.hidden {
+    display: none;
+}
+
+
+
+/* cart.css */
+
+/* Style the table */
+#cart-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 150px;
+}
+
+#cart-table th, #cart-table td {
+    padding: 10px;
+    border: 1px solid #9a983c;
+}
+
+/* Style table header */
+#cart-table th {
+    background-color: #b7a46c;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Style the Remove button */
+#cart-table button {
+    background-color: #c18732;
+    color: rgb(243, 243, 243);
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+#cart-table button:hover {
+    background-color: #c0392b;
+}
+
+th, td {
+    background-color: #fff;
+    font-size: larger;
+    font-weight: bolder;
+}
+
+/* Adjust the width of the quantity input box */
+#cart-table input[name="quantity"] {
+    width: 60px;
+}
+
+#qty{
+    width: 100px;
+}
+
+#checkout-button {
+    background-color: #c18732;
+}

@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>BOOK YOUR MEALS</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+
+  <link href="../assets/img/favicon.png" rel="icon">
+  <link href="../assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+
+  <link href="../assets/vendor/animate.css/animate.min.css" rel="stylesheet">
+  <link href="../assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="../assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="../assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+
+  <link href="../assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+  
+
+
+  <h1>Your Shopping Cart</h1>
+
+  <!-- Cart Items List -->
+  <ul id="cart-items">
+      <!-- Cart items will be dynamically added here using JavaScript -->
+  </ul>
+  <a href="menu.php" id="add-items-button">Add Items</a>
+  
+
+<!-- Total Items Count -->
+<div id="item-count">Items in Cart: <span id="item-count-value">0</span></div>
+
+  <!-- Total Price -->
+  <div id="total-price">
+      Total: ₹<span id="total-amount">0</span>
+  </div>
+
+  <!-- Payment Options -->
+  <h2>Select Payment Method</h2>
+  <form id="payment-form">
+      <label>
+          <input type="radio" name="payment-method" value="card">
+          Credit/Debit Card
+      </label>
+      <label>
+          <input type="radio" name="payment-method" value="cash">
+          Cash on Delivery
+      </label>
+      <label>
+          <input type="radio" name="payment-method" value="upi">
+          UPI
+      </label>
+  </form>
+
+  <!-- Order Button -->
+  <button id="order-button">Place Order</button>
+
+  <!-- Add JavaScript for cart functionality here -->
+
+
+  <script>
+    // JavaScript to handle displaying items in the cart
+    const cartItemsList = document.getElementById('cart-items');
+    const itemCount = document.getElementById('item-count-value');
+    const totalAmount = document.getElementById('total-amount');
+
+    // Check if the cart data exists in localStorage
+    let cartData = localStorage.getItem('cartData');
+
+    if (!cartData) {
+        cartData = [];
+    } else {
+        cartData = JSON.parse(cartData);
+    }
+
+    // Display cart items
+    function displayCartItems() {
+        cartItemsList.innerHTML = '';
+        itemCount.textContent = cartData.length;
+
+        let totalPrice = 0;
+
+        cartData.forEach(item => {
+            const listItem = document.createElement('li');
+            listItem.textContent = `${item.name} (₹${item.price}) x ${item.quantity}`;
+            cartItemsList.appendChild(listItem);
+            totalPrice += item.price * item.quantity;
+        });
+
+        totalAmount.textContent = totalPrice;
+    }
+
+    displayCartItems();
+
+    // You can also update the cart count displayed in the header
+</script>
+
+<style>
+
+/* Cart Page Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #000000;
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#cart-items {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 10px 0;
+    padding: 10px;
+    background-color: #060505;
+    border: 1px solid #ddd;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.remove-item {
+    background-color: #fe0000;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.remove-item:hover {
+    background-color: #c82333;
+}
+
+#total-price {
+    margin-top: 20px;
+    text-align: right;
+    font-weight: bold;
+}
+
+#payment-form {
+    margin-top: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+button#order-button {
+    display: block;
+    margin-top: 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 18px;
+    transition: background-color 0.3s;
+}
+
+button#order-button:hover {
+    background-color: #0056b3;
+}
+
+#add-items-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+#add-items-button:hover {
+    background-color: #0056b3;
+}
+
+</style>
+
+
+</body>
+
+</html>

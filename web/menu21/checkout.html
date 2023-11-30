@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Checkout</title>
+    
+    <style>
+       
+        #checkout-details {
+            width: 100%;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+   
+    <div id="checkout-details">
+        <h2>Delivery Address</h2>
+        <!-- Add your delivery address form fields here -->
+        <div>
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        <!-- Add more address fields as needed -->
+
+        <h2>Payment Option</h2>
+        <!-- Add radio buttons or other input fields for payment options here -->
+        <div>
+            <label for="credit-card">Credit Card</label>
+            <input type="radio" id="credit-card" name="payment-option" value="credit-card" required>
+            <label for="UPI">UPI</label>
+            <input type="radio" id="UPI" name="payment-option" value="UPI" required>
+            <label for="cash-on-delivery">Cash On Delivery</label>
+            <input type="radio" id="cash-on-delivery" name="payment-option" value="cash-on-delivery" required>
+            <!-- Add more payment options as needed -->
+        </div>
+    </div>
+    
+
+    <button id="place-order-button" onclick="placeOrder()">Place Order</button>
+
+
+
+
+</body>
+</html>
